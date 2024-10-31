@@ -1,0 +1,29 @@
+create database ExpenseApp;
+use ExpenseApp;
+
+CREATE TABLE AppUser(
+   idUser INT AUTO_INCREMENT,
+   username VARCHAR(50) NOT NULL,
+   userMail VARCHAR(100) NOT NULL,
+   password VARCHAR(50) NOT NULL,
+   PRIMARY KEY(idUser)
+);
+
+CREATE TABLE Budget(
+   idBudget INT AUTO_INCREMENT,
+   MontantBudget DECIMAL(15,2) NOT NULL,
+   idUser INT NOT NULL,
+   PRIMARY KEY(idBudget),
+   UNIQUE(idUser),
+   FOREIGN KEY(idUser) REFERENCES AppUser(idUser)
+);
+
+CREATE TABLE Expense(
+   idExpense INT AUTO_INCREMENT,
+   DateExpense DATE NOT NULL,
+   MontantExpense VARCHAR(50) NOT NULL,
+   NomExpense VARCHAR(100) NOT NULL,
+   idUser INT NOT NULL,
+   PRIMARY KEY(idExpense),
+   FOREIGN KEY(idUser) REFERENCES AppUser(idUser)
+);

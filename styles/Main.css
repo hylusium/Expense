@@ -1,0 +1,36 @@
+* {
+	--main-bg-color: rgb(34, 40, 49);
+	--second-bg-color: rgb(49, 54, 63);
+	--items-color: rgb(118, 171, 174);
+	--lastframe: rgb(238, 238, 238);
+}
+* {
+	color: var(--lastframe);
+}
+body {
+	background-color: var(--main-bg-color);
+}
+
+.subButton {
+	border: 2px solid var(--items-color);
+	color: var(--second-bg-color);
+	background-color: var(--items-color);
+}
+
+.subButton:hover {
+	border: 2px solid var(--items-color);
+	color: var(--lastframe);
+	background-color: var(--second-bg-color);
+}
+
+.subButton:focus {
+	border: 2px solid var(--items-color);
+	color: var(--lastframe);
+	background-color: var(--second-bg-color);
+}
+
+.backtoLogin {
+	text-decoration: none;
+	color: var(--lastframe);
+	margin-bottom: 5%;
+}
